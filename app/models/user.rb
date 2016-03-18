@@ -11,15 +11,38 @@ class User < ActiveRecord::Base
 
   validates :email, presence: true,
                     uniqueness: true,
-                    format: { with: EMAIL_FORMAT }
+                    format: { with: EMAIL_FORMAT },
+                    unless:   :from_omniauth?
 
 
   validates :first_name,
-            :last_name,
             :password, presence: true
+
+  validates :last_name, presence: true,
+            unless:   :from_omniauth?
 
 
   private
+
+  def self.find_from_omniauth(omniauth_data)
+    User.where(provider: omniauth_data["provider"],
+               uid:      omniauth_data["uid"]).first
+  end
+
+  def self.create_from_omniauth(omniauth_data)
+    full_name = omniauth_data["info"]["name"].split
+    User.create(uid:                      omniauth_data["uid"],
+                provider:                 omniauth_data["provider"],
+                username:                 omniauth_data['info']['nickname'],
+                first_name:               full_name[0],
+                last_name:                full_name[1],
+                password:                 SecureRandom.hex(16)
+                )
+  end
+
+  def from_omniauth?
+    uid.present? && provider.present?
+  end
 
   def full_name
     "#{first_name} #{last_name}".titleize

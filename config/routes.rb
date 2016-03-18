@@ -13,7 +13,12 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   delete '/logout' => 'sessions#destroy'
 
-  
+  #OmniAuth provider routes
+  get "/auth/twitter", as: :sign_in_with_twitter
+  get "/auth/:provider/callback/" => "callbacks#index"
+
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

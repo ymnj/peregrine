@@ -35,6 +35,7 @@ gem 'materialize-sass'
 # gem 'unicorn'
 
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
