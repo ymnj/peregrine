@@ -5,7 +5,9 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  validates :username, uniqueness: { case_sensitive: false },
+  validates :username, uniqueness: { case_sensitive: false},
+                       allow_nil: true, 
+                       allow_blank: true,
                        length: { maximum: 15 },
                        format: { with: USERNAME_FORMAT }
 
@@ -33,7 +35,7 @@ class User < ActiveRecord::Base
     full_name = omniauth_data["info"]["name"].split
     User.create(uid:                      omniauth_data["uid"],
                 provider:                 omniauth_data["provider"],
-                username:                 omniauth_data['info']['nickname'],
+                email:                    omniauth_data["info"]['email'],
                 first_name:               full_name[0],
                 last_name:                full_name[1],
                 password:                 SecureRandom.hex(16)

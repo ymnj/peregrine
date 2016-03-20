@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   #OmniAuth provider routes
   get "/auth/twitter", as: :sign_in_with_twitter
+  get "/auth/facebook", as: :sign_in_with_facebook
+  
   get "/auth/:provider/callback/" => "callbacks#index"
 
 
