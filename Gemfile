@@ -34,6 +34,11 @@ gem 'materialize-sass'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem "omniauth-google-oauth2"
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

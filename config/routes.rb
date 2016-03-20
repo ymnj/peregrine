@@ -3,7 +3,24 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'home#index'
+
+
+  resources :users, except: [:index, :new]
+  get '/signup' => 'users#new'
+  
+  resources :sessions
+  get '/login' => 'sessions#new'
+  delete '/logout' => 'sessions#destroy'
+
+  #OmniAuth provider routes
+  get "/auth/twitter", as: :sign_in_with_twitter
+  get "/auth/facebook", as: :sign_in_with_facebook
+  get "/auth/google_oauth2", as: :sign_in_with_google
+  
+  get "/auth/:provider/callback/" => "callbacks#index"
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
