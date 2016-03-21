@@ -40,11 +40,8 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :first_name, :last_name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :first_name, :last_name, :email, :password, :password_confirmation, :avatar)
   end
 
-  def new_password_is_different?
-    params["user"]["password"] != @user.authenticate(params["user"]["password"])
-  end
 
 end

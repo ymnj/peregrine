@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
 
   USERNAME_FORMAT = /\A[a-zA-Z0-9]+\z/
   EMAIL_FORMAT = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
-
+  
+  mount_uploader :avatar, AvatarUploader
   has_secure_password
 
   validates :username, uniqueness: { case_sensitive: false},
