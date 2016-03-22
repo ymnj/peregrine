@@ -1,50 +1,57 @@
-<div class="container">
+<div class="container login-container">
 
-  <h4 class="center-align">User Login</h4>
+  <div class="center-align">
+    <h3>Peregrine</h3>
+  </div>
 
-  <div class="row">
-    <%= form_tag sessions_path, {class: 'col s12 l6 offset-l3'} do %>
+  <div class="input-container">
     <div class="row">
-      <div class="input-field col s6">
-        <%= label_tag :email%>
-        <%= email_field_tag :email %>
+      <%= form_tag sessions_path, class: 'col s12 m6 offset-m3' do %>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= label_tag :email%>
+          <%= email_field_tag :email %>
+        </div>
       </div>
-      <div class="input-field col s6">
-        <%= label_tag :password %>
-        <%= password_field_tag :password %>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
+        </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col s12 m6 offset-m3 center-align">
+        <%= button_tag( :class => "btn waves-effect waves-light" ) do %>
+          Login <i class='material-icons right'>send</i>
+        <% end %>
+      </div>
+    </div>
+    <% end %> <!-- End form -->
+  </div> <!-- End input-container -->
+
+  <div class="row center-align">
+    <div class="col s12">
+      <p>or sign in via</p>
+    </div>
   </div>
+
   <div class="row">
-    <div class="col s12 center-align">
-      <%= button_tag( :class => "btn waves-effect waves-light" ) do %>
-        Login <i class='material-icons right'>send</i>
-      <% end %>
+    <div class="col s12 m6 offset-m3 center-align">
+      <div class="row">
+        <div class="col s4">
+          <%= link_to "<i class='fa fa-twitter-square'>&nbsp Twitter</i>".html_safe, sign_in_with_twitter_path %> 
+        </div>
+        <div class="col s4">
+          <%= link_to "<i class='fa fa-facebook-official'>&nbsp Facebook</i>".html_safe, sign_in_with_facebook_path %> 
+        </div>  
+        <div class="col s4">
+          <%= link_to "<i class='fa fa-google-plus-square'>&nbsp Google</i>".html_safe, sign_in_with_google_path %> 
+        </div>     
+      </div>
     </div>
   </div>
-  <% end %> <!-- End form -->
 
-  <div class="row center-align">
-    <div class="col s12">
-      <p>Or</p>
-    </div>
-  </div>
-
-  <div class="row center-align">
-    <div class="col s12">
-      <%= link_to "<i class='fa fa-twitter-square'>&nbsp Twitter</i>".html_safe, sign_in_with_twitter_path, class: "waves-effect waves-light btn" %> 
-    </div>
-  </div>
-  <div class="row center-align">
-    <div class="col s12">
-      <%= link_to "<i class='fa fa-facebook-official'>&nbsp Facebook</i>".html_safe, sign_in_with_facebook_path, class: "waves-effect waves-light btn" %>  
-    </div>
-  </div>
-  <div class="row center-align">
-    <div class="col s12">
-      <%= link_to "<i class='fa fa-google-plus-square'>&nbsp Google</i>".html_safe, sign_in_with_google_path, class: "waves-effect waves-light btn" %> 
-    </div>
-  </div>
 
 
 
