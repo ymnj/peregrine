@@ -14,7 +14,7 @@
           <div class="row">
             <div class="input-field col s12">
               <%= f.label :username %>
-              <%= f.text_field :username %>
+              <%= f.text_field :username, length: 15 %>
             </div>
           </div>
           <div class="row">
@@ -66,6 +66,15 @@
           </div>
         </div>
       </div> <!-- End top row -->
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :summary, "Summary" %>
+          <%= f.text_area :summary, class: "materialize-textarea", length: 140 %>  
+        </div>
+      </div>
+    
+
       Change password
       <div class="row">
         <div class="input-field col s12">

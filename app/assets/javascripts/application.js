@@ -20,5 +20,7 @@ $(document).ready(function(){
   $(".button-collapse").sideNav();
 
   $(".dropdown-button").dropdown();
+
+  $('input#input_text, textarea#textarea1').characterCounter();
   
 });

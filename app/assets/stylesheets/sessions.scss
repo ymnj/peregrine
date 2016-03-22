@@ -6,6 +6,7 @@
 .login-container {
 
   color: #9e9e9e;
+  padding-top: 40px;
 
   .input-container {
 
@@ -16,6 +17,10 @@
         
       }
 
+  }
+
+  .omniauth-login a {
+    font-size: 11px;
   }
 
 }
