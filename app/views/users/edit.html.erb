@@ -1,0 +1,92 @@
+<div class="container edit-account-container">
+
+  <div>
+    <%= @user.errors.full_messages.join(", ") %>
+  </div>
+
+  <h4 class="center-align">Edit Account</h4>
+
+  <div class="row">
+    <%= form_for @user, html: { class: "col s12", multipart: true } do |f| %>
+      <div class="row">
+        <div class="basic-edit col s6">
+          Basic Information
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.label :username %>
+              <%= f.text_field :username %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name, class: "validate" %>
+            </div>
+            <div class="input-field col s6">
+              <%= f.label :last_name %>
+              <%= f.text_field :last_name, class: "validate" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <%= f.label :email, data: {error: 'invalid email', success: "valid"} %>
+              <%= f.email_field :email, class: "validate" %>
+            </div>
+          </div>
+        </div> <!-- /basic-edit -->
+        <div class="photo-edit col s6 center-align">
+          <!-- profile picture -->
+          <div class="row">
+            <div class="col s12">
+              <%= image_tag avatar(@user) %>
+            </div>
+          </div>
+          <div class="file-field input-field">`
+            <div class="row">
+              <div class="col s12">
+                <div class="btn">
+                  <span>Upload New Picture</span>
+                  <%= f.file_field :avatar %>
+                  <%= f.hidden_field :avatar_cache %>
+                </div>  
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s6">
+                <div class="file-path-wrapper">
+                  <!-- <input class="file-path validate" type="text"> -->
+                  <%= text_field_tag :avatar, nil, class: "file-path validate" %>
+                </div>
+              </div>
+              <div class="col s6">
+                <%= f.check_box :remove_avatar, class: "filled-in" %>
+                <%= f.label :remove_avatar, "Remove Photo" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End top row -->
+      Change password
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :password, "New Password" %>
+          <%= f.password_field :password, class: "validate" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :password_confirmation, "Confirm New Password" %>
+          <%= f.password_field :password_confirmation, class: "validate" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <%= button_tag( :class => "btn waves-effect waves-light" ) do %>
+            Submit <i class='material-icons right'>send</i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
