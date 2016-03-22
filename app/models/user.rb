@@ -39,6 +39,7 @@ class User < ActiveRecord::Base
                 email:                    omniauth_data["info"]['email'],
                 first_name:               full_name[0],
                 last_name:                full_name[1],
+                remote_avatar_url:        omniauth_data["info"]["image"],
                 password:                 SecureRandom.hex(16)
                 )
   end

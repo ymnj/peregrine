@@ -24,9 +24,29 @@
   </div>
   <% end %> <!-- End form -->
 
-  <%= link_to "Sign in with Twitter",sign_in_with_twitter_path %> 
-  <br>
-  <%= link_to "Sign in with Facebook", sign_in_with_facebook_path %>
-  <br>
-  <%= link_to "Sign in with Google", sign_in_with_google_path %>
+  <div class="row center-align">
+    <div class="col s12">
+      <p>Or</p>
+    </div>
+  </div>
+
+  <div class="row center-align">
+    <div class="col s12">
+      <%= link_to "<i class='fa fa-twitter-square'>&nbsp Twitter</i>".html_safe, sign_in_with_twitter_path, class: "waves-effect waves-light btn" %> 
+    </div>
+  </div>
+  <div class="row center-align">
+    <div class="col s12">
+      <%= link_to "<i class='fa fa-facebook-official'>&nbsp Facebook</i>".html_safe, sign_in_with_facebook_path, class: "waves-effect waves-light btn" %>  
+    </div>
+  </div>
+  <div class="row center-align">
+    <div class="col s12">
+      <%= link_to "<i class='fa fa-google-plus-square'>&nbsp Google</i>".html_safe, sign_in_with_google_path, class: "waves-effect waves-light btn" %> 
+    </div>
+  </div>
+
+
+
+
 </div>

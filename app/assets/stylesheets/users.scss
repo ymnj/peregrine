@@ -2,7 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.photo-edit {
-  background-color: salmon;
-  height: 100%;
+.photo-edit.col.s6.center-align {
+
+  padding-top: 16px;
+
+  img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .file-field .btn {
+    float: none;
+  }
+
 }
+
