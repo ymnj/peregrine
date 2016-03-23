@@ -9,11 +9,13 @@ class CallbacksController < ApplicationController
     if user_sign_in(user)
       redirect_to root_path, notice: "Logged in with #{omniauth_data['provider']}"
     else 
-      redirect_to new_session_path
-      flash[:alert] = "Something went wrong"
+      redirect_to login_path
+      flash[:alert] = "Something was wrong with the login. Please try again"
     end
 
   end
 
 
 end
+
+
