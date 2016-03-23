@@ -6,9 +6,12 @@ Rails.application.routes.draw do
   root 'home#index'
 
 
-  resources :users, except: [:index, :new]
+  resources :users, except: [:index, :new] do 
+    resources :trips
+  end
   get '/signup' => 'users#new'
-  
+
+
   resources :sessions, only: [:create]
   get '/login' => 'sessions#new'
   delete '/logout' => 'sessions#destroy'
@@ -18,8 +21,6 @@ Rails.application.routes.draw do
   get "/auth/facebook", as: :sign_in_with_facebook
   get "/auth/google_oauth2", as: :sign_in_with_google
   get "/auth/:provider/callback/" => "callbacks#index"
-
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

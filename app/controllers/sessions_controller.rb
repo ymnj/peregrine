@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   def new
-    
   end
 
   def create
@@ -10,8 +9,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to root_path
     else
-      render :new
       flash[:alert] = "wrong wrong something wrong"
+      render :new
     end
   end
 
