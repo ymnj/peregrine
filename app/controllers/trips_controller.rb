@@ -1,13 +1,14 @@
 class TripsController < ApplicationController
 
   def index
-    @trips = Trip.all 
+    @trips = Trip.all
   end
 
   def new
     @trip = Trip.new
 
     respond_to do |format|
+      format.html { render :index }
       format.js { render "success_trip" }
     end
   end
@@ -18,7 +19,7 @@ class TripsController < ApplicationController
     @trip.user = current_user
 
     if @trip.save
-      redirect_to new_trip_path
+      redirect_to user_trips_path(current_user)
     else
       flash[:notice] = "Something is wrong"
       render :new
