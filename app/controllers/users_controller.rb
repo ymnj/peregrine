@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(current_user)
 
-    if params[:user][:remove_avatar] == 1
+    if params[:user][:remove_avatar] == "1"
       @user.remove_avatar!
       @user.save
     end
