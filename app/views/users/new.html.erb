@@ -10,7 +10,7 @@
   <%= form_for @user, html: {class: "col s12"} do |f| %>
       <div class="input-field col s12">
         <%= f.label :username %>
-        <%= f.text_field :username %>
+        <%= f.text_field :username, length: 25 %>
       </div>
       <div class="input-field col s6">
         <%= f.label :first_name %>
