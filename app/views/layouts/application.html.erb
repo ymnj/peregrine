@@ -5,45 +5,52 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-<!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <!--Import Google Icon Font-->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <!--Import MD Iconic Font -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body data-no-turbolink="true">
   
-   <nav>
+
+  <!-- Dropdown Structure -->
+  <% if user_signed_in? %>
+  <ul id="dropdown1" class="dropdown-content">
+    <%= render "layouts/user_menu" %>
+  </ul>
+  <% end %>
+
+  <nav>
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">Peregrine</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <!-- List of links -->
+        <!-- Dropdown Trigger -->
         <% if user_signed_in? %>
-          <li><%= link_to "Profile", edit_user_path(current_user) %></li>
-          <li><%= link_to "Log Out", logout_path,
-                                      method: :delete %></li>
+          <li>
+            <a class="dropdown-button" data-beloworigin="true" data-hover="true" href="#!" data-activates="dropdown1">
+              <i class='material-icons left'>view_module</i><%= user_full_name %> <i class="material-icons right">arrow_drop_down</i>
+            </a>
+          </li>
         <% else %>
-          <li><%= link_to "Sign Up", signup_path %></li>
-          <li><%= link_to "Login", login_path %></li>
+          <%= render "layouts/signup_menu" %>
         <% end %>
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <% if user_signed_in? %>
-          <li><%= link_to "Profile", edit_user_path(current_user) %></li>
-          <li><%= link_to "Log Out", logout_path,
-                                      method: :delete %></li>
+          <%= render "layouts/user_menu" %>
         <% else %>
-          <li><%= link_to "Sign Up", signup_path %></li>
-          <li><%= link_to "Login", login_path %></li>
+          <%= render "layouts/signup_menu" %>
         <% end %>
+  
       </ul>
     </div>
   </nav>
-
-  
 
 
 <%= yield %>

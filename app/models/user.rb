@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   EMAIL_FORMAT = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   
   mount_uploader :avatar, AvatarUploader
+
   has_secure_password
 
   validates :username, uniqueness: { case_sensitive: false},
@@ -24,6 +25,7 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true,
             unless:   :from_omniauth?
 
+  validates :summary, length: { maximum: 140 }
 
   private
 
@@ -39,6 +41,7 @@ class User < ActiveRecord::Base
                 email:                    omniauth_data["info"]['email'],
                 first_name:               full_name[0],
                 last_name:                full_name[1],
+                remote_avatar_url:        omniauth_data["info"]["image"],
                 password:                 SecureRandom.hex(16)
                 )
   end

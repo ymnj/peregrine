@@ -10,10 +10,11 @@
     <%= form_for @user, html: { class: "col s12", multipart: true } do |f| %>
       <div class="row">
         <div class="basic-edit col s6">
+          <i class='zmdi zmdi-info-outline zmdi-hc-fw'></i> Basic Information
           <div class="row">
             <div class="input-field col s12">
               <%= f.label :username %>
-              <%= f.text_field :username %>
+              <%= f.text_field :username, length: 15 %>
             </div>
           </div>
           <div class="row">
@@ -37,28 +38,44 @@
           <!-- profile picture -->
           <div class="row">
             <div class="col s12">
-              <%= image_tag @user.avatar.url(:thumb), class: 'valign' %>
+              <%= image_tag avatar(@user) %>
             </div>
           </div>
-          <div class="row">
-            <div class="file-field input-field">
-              <div class="btn">
-                <span>Photo</span>
-                <input type="file">
+          <div class="file-field input-field">`
+            <div class="row">
+              <div class="col s12">
+                <div class="btn">
+                  <span>Upload New Picture</span>
+                  <%= f.file_field :avatar %>
+                  <%= f.hidden_field :avatar_cache %>
+                </div>  
               </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" type="text">
+            </div>
+            <div class="row">
+              <div class="col s6">
+                <div class="file-path-wrapper">
+                  <!-- <input class="file-path validate" type="text"> -->
+                  <%= text_field_tag :avatar, nil, class: "file-path validate" %>
+                </div>
+              </div>
+              <div class="col s6">
+                <%= f.check_box :remove_avatar, class: "filled-in" %>
+                <%= f.label :remove_avatar, "Remove Photo" %>
               </div>
             </div>
           </div>
         </div>
-                      
-<!--               <%= f.label :avatar, "Photo" %>
-              <%= f.file_field :avatar %>
-              <%= f.hidden_field :avatar_cache %>
- -->
-
       </div> <!-- End top row -->
+      
+      <div class="row">
+        <div class="input-field col s12">
+          <%= f.label :summary, "Summary" %>
+          <%= f.text_area :summary, class: "materialize-textarea", length: 140 %>  
+        </div>
+      </div>
+    
+
+      Change password
       <div class="row">
         <div class="input-field col s12">
           <%= f.label :password, "New Password" %>
