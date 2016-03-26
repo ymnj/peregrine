@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: { case_sensitive: false},
                        allow_nil: true, 
                        allow_blank: true,
-                       length: { maximum: 15 },
+                       length: { maximum: 25 },
                        format: { with: USERNAME_FORMAT }
 
   validates :email, presence: true,
@@ -20,9 +20,11 @@ class User < ActiveRecord::Base
 
 
   validates :first_name,
-            :password, presence: true, on: :create
+            :password, presence: true, on: :create,
+            length: { maximum: 20 }
 
   validates :last_name, presence: true,
+            length: { maximum: 20 },
             unless:   :from_omniauth?
 
   validates :summary, length: { maximum: 140 }
