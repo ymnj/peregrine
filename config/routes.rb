@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   root 'home#index'
 
 
+
+
+  resources :trips, except: [:index]
+
   resources :users, except: [:index, :new] do 
-    resources :trips
+    resources :trips, only: [:index]
   end
   get '/signup' => 'users#new'
 

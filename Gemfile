@@ -41,6 +41,7 @@ gem "omniauth-google-oauth2"
 gem 'carrierwave'
 gem "mini_magick"
 
+gem 'country_select'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
