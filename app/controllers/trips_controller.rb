@@ -6,7 +6,12 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
+
+    respond_to do |format|
+      format.js { render "success_trip" }
+    end
   end
+
 
   def create
     @trip = Trip.new trip_params
