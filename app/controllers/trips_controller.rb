@@ -21,7 +21,8 @@ class TripsController < ApplicationController
 
     respond_to do |format|
       if @trip.save
-        redirect_to user_trips_path(current_user)
+        format.html { render :index }
+        format.js { render js: "window.location='#{user_trips_path(@trips)}'" }
       else
         format.html { render :index }
         format.js { render "fail_trip" }
