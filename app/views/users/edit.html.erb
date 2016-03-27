@@ -13,24 +13,24 @@
           <i class='zmdi zmdi-info-outline zmdi-hc-fw'></i> Basic Information
           <div class="row">
             <div class="input-field col s12">
-              <%= f.label :username %>
               <%= f.text_field :username, length: 25 %>
+              <%= f.label :username %>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <%= f.label :first_name %>
               <%= f.text_field :first_name, class: "validate" %>
+              <%= f.label :first_name %>
             </div>
             <div class="input-field col s6">
-              <%= f.label :last_name %>
               <%= f.text_field :last_name, class: "validate" %>
+              <%= f.label :last_name %>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <%= f.label :email, data: {error: 'invalid email', success: "valid"} %>
               <%= f.email_field :email, class: "validate" %>
+              <%= f.label :email, data: {error: 'wrong', success: "valid"} %>
             </div>
           </div>
         </div> <!-- /basic-edit -->
@@ -41,7 +41,7 @@
               <%= image_tag avatar(@user) %>
             </div>
           </div>
-          <div class="file-field input-field">`
+          <div class="file-field input-field">
             <div class="row">
               <div class="col s12">
                 <div class="btn">
@@ -69,8 +69,8 @@
       
       <div class="row">
         <div class="input-field col s12">
-          <%= f.label :summary, "Summary" %>
           <%= f.text_area :summary, class: "materialize-textarea", length: 140 %>  
+          <%= f.label :summary, "Summary" %>
         </div>
       </div>
     
@@ -78,14 +78,14 @@
       Change password
       <div class="row">
         <div class="input-field col s12">
-          <%= f.label :password, "New Password" %>
           <%= f.password_field :password, class: "validate" %>
+          <%= f.label :password, "New Password" %>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <%= f.label :password_confirmation, "Confirm New Password" %>
           <%= f.password_field :password_confirmation, class: "validate" %>
+          <%= f.label :password_confirmation, "Confirm New Password" %>
         </div>
       </div>
       <div class="row">

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   has_secure_password
+  has_many :trips, dependent: :destroy
 
   validates :username, uniqueness: { case_sensitive: false},
                        allow_nil: true, 
@@ -18,14 +19,14 @@ class User < ActiveRecord::Base
                     format: { with: EMAIL_FORMAT},
                     unless:   :from_omniauth?
 
+  # validates :email, format: { with: EMAIL_FORMAT} , on: :update,
+  #                   uniqueness: true, on: :update
 
   validates :first_name,
-            :password, presence: true, on: :create,
-            length: { maximum: 20 }
-
-  validates :last_name, presence: true,
-            length: { maximum: 20 },
-            unless:   :from_omniauth?
+            :password, presence: true, on: :create
+            
+  validates :last_name, length: { maximum: 20 }
+            
 
   validates :summary, length: { maximum: 140 }
 

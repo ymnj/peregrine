@@ -1,10 +1,10 @@
 
 <div class="col s12">
-  <%= form_for @trip do |f| %>
+  <%= form_for @trip, remote: true do |f| %>
     <div class="row">
       <div class="input-field col s12">
         <%= f.label :title %>
-        <%= f.text_field :title, length: 50 %>
+        <%= f.text_field :title, length: 50, class: "validate" %>
       </div>
     </div>
     <div class="row">
@@ -34,7 +34,7 @@
       </div>
     </div>
     <div class="col s12 center-align">
-      <%= button_tag( :class => "btn waves-effect waves-light" ) do %>
+      <%= button_tag( class: "btn waves-effect waves-light" ) do %>
       Save Trip <i class='material-icons right'>send</i>
   <% end %>
 </div>
