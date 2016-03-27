@@ -15,14 +15,17 @@ class TripsController < ApplicationController
 
 
   def create
+    @trips = Trip.all
     @trip = Trip.new trip_params
     @trip.user = current_user
 
-    if @trip.save
-      redirect_to user_trips_path(current_user)
-    else
-      flash[:notice] = "Something is wrong"
-      render :new
+    respond_to do |format|
+      if @trip.save
+        redirect_to user_trips_path(current_user)
+      else
+        format.html { render :index }
+        format.js { render "fail_trip" }
+      end
     end
   end
 
