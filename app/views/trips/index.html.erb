@@ -1,13 +1,14 @@
-<div class="container trips-container" style="background-color:steelblue;">
+<div class="container trips-container">
 
   <div class="row">
-    <div class="col s12 m5 center-align" style="background-color:salmon;"> <%= link_to "Add new trip", new_trip_path, remote: true %>
+    <div id="trips-left" class="col s12 m4 center-align" style="background-color:salmon;"> <%= link_to "Add new trip", new_trip_path, remote: true %>
       <h5>My Trips</h5>  
-      <div class="row">
+      <div class="row collection-row">
         <div class="collection">
           <% @trips.each do |trip| %>
             <a href="#!" class="collection-item"><%= trip.title %></a>
           <% end %>
+          <div class="collection-item">Pagination</div>
           <!-- <a href="#!" class="collection-item">Alvin</a>
           <a href="#!" class="collection-item">Alvin</a>
           <a href="#!" class="collection-item">Alvin</a>
@@ -15,7 +16,7 @@
         </div>
       </div>
     </div> <!--End col s5-->
-    <div id="trips-right" class="col s12 m7">
+    <div id="trips-right" class="col s12 m8" style="background-color:steelblue;">
 
     </div>
   </div>

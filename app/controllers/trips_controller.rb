@@ -1,7 +1,7 @@
 class TripsController < ApplicationController
 
   def index
-    @trips = Trip.all
+    @trips = current_user.trips.limit(4)
   end
 
   def new
@@ -15,13 +15,14 @@ class TripsController < ApplicationController
 
 
   def create
-    @trips = Trip.all
+    @trips = current_user.trips
     @trip = Trip.new trip_params
     @trip.user = current_user
 
     respond_to do |format|
       if @trip.save
-        redirect_to user_trips_path(current_user)
+        format.html { render :index }
+        format.js { render js: "window.location='#{user_trips_path(@trips)}'" }
       else
         format.html { render :index }
         format.js { render "fail_trip" }
