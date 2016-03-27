@@ -1,7 +1,7 @@
 class TripsController < ApplicationController
 
   def index
-    @trips = Trip.all
+    @trips = current_user.trips.limit(4)
   end
 
   def new
@@ -15,7 +15,7 @@ class TripsController < ApplicationController
 
 
   def create
-    @trips = Trip.all
+    @trips = current_user.trips
     @trip = Trip.new trip_params
     @trip.user = current_user
 
