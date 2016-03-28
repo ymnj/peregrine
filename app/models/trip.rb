@@ -3,7 +3,9 @@ class Trip < ActiveRecord::Base
 
   #Geocoder
   geocoded_by :trip_location   
-  after_validation :geocode         
+  after_validation :geocode, on: :create
+  
+  geocoded_by :trip_location, on: :update
 
   validates :title, presence: true,
                     uniqueness: { scope: :user_id },
