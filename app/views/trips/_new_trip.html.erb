@@ -1,16 +1,16 @@
 
-<div class="col s12">
+<div class="col s12 trip-form-container">
   <%= form_for @trip, remote: true do |f| %>
     <div class="row">
       <div class="input-field col s12">
-        <%= f.label :title %>
+        <%= f.label :title, "Title *" %>
         <%= f.text_field :title, length: 50, class: "validate" %>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12 m6">
         <%= f.country_select :country, { include_blank: true } %>
-        <%= f.label :country %>
+        <%= f.label :country, "Country *" %>
       </div>
       <div class="input-field col s12 m6">
         <%= f.label :city %>

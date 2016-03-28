@@ -1,4 +1,5 @@
 var newTrip = "<a href='#!' class='collection-item'><%= @trip.title %></a>"
 
-
 $('#trips-left .collection').prepend(newTrip);
+$('#trips-right').html("<%= j render 'map' %>").hide().fadeIn(1500);
+
