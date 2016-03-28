@@ -42,6 +42,10 @@ gem 'carrierwave'
 gem "mini_magick"
 
 gem 'country_select'
+gem 'countries'
+
+gem 'geocoder'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
