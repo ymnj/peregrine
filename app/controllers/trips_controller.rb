@@ -22,7 +22,8 @@ class TripsController < ApplicationController
     respond_to do |format|
       if @trip.save
         format.html { render :index }
-        format.js { render js: "window.location='#{user_trips_path(@trips)}'" }
+        format.js { render "success_trip_added" }
+        # format.js { render js: "window.location='#{user_trips_path(@trips)}'" }
       else
         format.html { render :index }
         format.js { render "fail_trip" }

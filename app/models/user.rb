@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
                        length: { maximum: 25 },
                        format: { with: USERNAME_FORMAT }
 
+  validates :username, presence: true, on: :create,
+                       unless: :from_omniauth?
+
   validates :email, presence: true, 
                     uniqueness: true, on: :create,
                     format: { with: EMAIL_FORMAT},
