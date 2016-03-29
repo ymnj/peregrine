@@ -1,23 +1,35 @@
-<div class="container">
+<div class="container trips-container">
 
   <div class="row">
-    <div class="col s5 center-align" style="background-color:salmon;"> <%= link_to "Add new trip", new_trip_path(current_user) %>
-      <h5>My Trips</h5>  
-      <div class="row">
+    <div id="trips-left" class="col s12 m4 center-align">
+      <div>
+        <%= link_to '<i class="zmdi zmdi-long-arrow-return"></i>'.html_safe, user_trips_path, remote: true, class: "return-trip-btn" %>
+        <h5>My Trips</h5>
+        <%= link_to '<i class="zmdi zmdi-collection-plus"></i>'.html_safe, new_trip_path, remote: true, class: "add-trip-btn" %>
+      </div>
+      <div class="row collection-row">
         <div class="collection">
           <% @trips.each do |trip| %>
             <a href="#!" class="collection-item"><%= trip.title %></a>
           <% end %>
-          <!-- <a href="#!" class="collection-item">Alvin</a>
-          <a href="#!" class="collection-item">Alvin</a>
-          <a href="#!" class="collection-item">Alvin</a>
-          <a href="#!" class="collection-item">Alvin</a> -->
+          <div class="collection-item">
+            <ul class="pagination">
+              <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+              <li class="active"><a href="#!">1</a></li>
+              <li class="waves-effect"><a href="#!">2</a></li>
+              <li class="waves-effect"><a href="#!">3</a></li>
+              <li class="waves-effect"><a href="#!">4</a></li>
+              <li class="waves-effect"><a href="#!">5</a></li>
+              <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            </ul>
+
+          </div>
         </div>
       </div>
     </div> <!--End col s5-->
-    <div class="col s7">
-      hi
+    <div id="trips-right" class="col s12 m8">
+      <%= render "map" %>
     </div>
   </div>
-
 </div>
+

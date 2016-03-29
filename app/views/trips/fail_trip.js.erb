@@ -1,0 +1,16 @@
+$("#trips-right").html("<%= j render 'new_trip' %>");
+
+
+var errorList = " <ul> <% @trip.errors.full_messages.each do |err| %> <li><%= err %></li> <% end %> </ul>"
+
+
+Materialize.toast(errorList, 5000, 'rounded');
+
+
+$('select').material_select();
+$('input, textarea').characterCounter();
+$('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+

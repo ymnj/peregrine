@@ -1,3 +1,21 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.nav-wrapper {
+
+  .zmdi {
+    display: inline-block;
+    text-align: left;
+    position: relative;
+    font-size: 1.6em;
+    top: 4px;
+  }
+
+  #dropdown1 i {
+    margin-left: 6px;
+  }
+
+}

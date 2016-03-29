@@ -1,3 +1,63 @@
-// Place all the styles related to the trips controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin full-height {
+  height: -webkit-calc(100vh - 64px);
+  height:    -moz-calc(100vh - 64px);
+  height:         calc(100vh - 64px);
+}
+
+
+.container.trips-container {
+  width: 100%;
+  @include full-height;
+
+  .row {
+    margin: 0;
+  }
+
+  .collection {
+    margin: 0;
+    border-right: none;
+  }
+
+  #trips-left {
+    padding: 0;
+    display: none;
+
+    h5 {
+      display: inline-block;
+    }
+
+    a.add-trip-btn {
+      float: right;
+      position: relative;
+      right: 15px;
+      top: 10px;
+      font-size: 22px;
+    }
+
+    a.return-trip-btn {
+      float: left;
+      position: relative;
+      left: 15px;
+      top: 10px;
+      font-size: 22px;
+    }
+
+  }
+
+  #trips-right {
+    padding: 0;
+    min-height: 502.13px;
+
+    .trip-form-container {
+      padding-top: 20px;
+    }
+
+    #map {
+      @include full-height;
+      width: 100%;
+      padding: 0;
+      position: relative
+    }
+  }
+
+}
