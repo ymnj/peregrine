@@ -1,8 +1,11 @@
 <div class="container trips-container">
 
   <div class="row">
-    <div id="trips-left" class="col s12 m4 center-align"> <%= link_to "Add new trip", new_trip_path, remote: true %>
-      <h5>My Trips</h5>  
+    <div id="trips-left" class="col s12 m4 center-align">
+      <div>
+        <h5>My Trips</h5>
+        <%= link_to '<i class="zmdi zmdi-collection-plus"></i>'.html_safe, new_trip_path, remote: true, class: "add-trip-btn" %>
+      </div>
       <div class="row collection-row">
         <div class="collection">
           <% @trips.each do |trip| %>
@@ -20,8 +23,4 @@
       <%= render "map" %>
     </div>
   </div>
-
-
 </div>
-
-

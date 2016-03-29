@@ -1,7 +1,8 @@
 
 $(document).ready(function(){
-  
-$('#trips-left').fadeIn(700)
-$('#map').hide().fadeIn(700)
+
+$('#map').hide()  
+$('#trips-left, #map').fadeIn(700)
+
 
 }); 
