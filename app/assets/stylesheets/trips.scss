@@ -23,8 +23,6 @@
     display: none;
 
     h5 {
-      position: relative;
-      left: 12px;
       display: inline-block;
     }
 
@@ -32,6 +30,14 @@
       float: right;
       position: relative;
       right: 15px;
+      top: 10px;
+      font-size: 22px;
+    }
+
+    a.return-trip-btn {
+      float: left;
+      position: relative;
+      left: 15px;
       top: 10px;
       font-size: 22px;
     }
