@@ -2,6 +2,12 @@ class TripsController < ApplicationController
 
   def index
     @trips = current_user.trips.limit(4)
+
+    respond_to do |format|
+      format.html { render :index }
+      format.js { render "return_map"}
+    end
+
   end
 
   def new
