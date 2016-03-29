@@ -15,11 +15,27 @@
 
   .collection {
     margin: 0;
+    border-right: none;
   }
 
   #trips-left {
     padding: 0;
     display: none;
+
+    h5 {
+      position: relative;
+      left: 12px;
+      display: inline-block;
+    }
+
+    a.add-trip-btn {
+      float: right;
+      position: relative;
+      right: 15px;
+      top: 10px;
+      font-size: 22px;
+    }
+
   }
 
   #trips-right {
