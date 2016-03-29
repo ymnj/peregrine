@@ -11,26 +11,11 @@
  * file per style scope.
  *
  *= require font-awesome
+ *= require jquery-ui
  *= require_tree .
  *= require_self
  */
 
-// .container {
-//   background-color: lightgrey;
-// }
 
-.nav-wrapper {
 
-  .zmdi {
-    display: inline-block;
-    text-align: left;
-    position: relative;
-    font-size: 1.6em;
-    top: 4px;
-  }
 
-  #dropdown1 i {
-    margin-left: 6px;
-  }
-
-}

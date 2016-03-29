@@ -1,7 +1,7 @@
 <div class="container trips-container">
 
   <div class="row">
-    <div id="trips-left" class="col s12 m4 center-align" style="background-color:salmon;"> <%= link_to "Add new trip", new_trip_path, remote: true %>
+    <div id="trips-left" class="col s12 m4 center-align"> <%= link_to "Add new trip", new_trip_path, remote: true %>
       <h5>My Trips</h5>  
       <div class="row collection-row">
         <div class="collection">
@@ -16,7 +16,7 @@
         </div>
       </div>
     </div> <!--End col s5-->
-    <div id="trips-right" class="col s12 m8" style="background-color: steelblue;">
+    <div id="trips-right" class="col s12 m8">
       <%= render "map" %>
     </div>
   </div>

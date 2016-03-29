@@ -9,7 +9,6 @@
   width: 100%;
   @include full-height;
 
-  background-color: black;
   .row {
     margin: 0;
   }
@@ -20,11 +19,12 @@
 
   #trips-left {
     padding: 0;
+    display: none;
   }
 
   #trips-right {
-    min-height: 502.13px;
     padding: 0;
+    min-height: 502.13px;
 
     .trip-form-container {
       padding-top: 20px;

@@ -12,18 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/effect-slide
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function(){
-  
-  // Navigation
-  $(".button-collapse").sideNav();
-  $(".dropdown-button").dropdown();
-
-
-  // User form
-  $('input#input_text, textarea#textarea1').characterCounter();
-  
-  
-}); 
