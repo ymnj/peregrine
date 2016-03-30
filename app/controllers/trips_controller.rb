@@ -1,7 +1,7 @@
 class TripsController < ApplicationController
 
   def index
-    @trips = current_user.trips.limit(4)
+    @trips = current_user.trips.page(params[:page]).per(5)
 
     respond_to do |format|
       format.html { render :index }
