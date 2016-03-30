@@ -47,7 +47,6 @@ gem 'countries'
 
 gem 'geocoder'
 
-gem 'kaminari'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

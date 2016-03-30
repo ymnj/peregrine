@@ -1,27 +1,11 @@
 class TripsController < ApplicationController
 
   def index
-    @trips = current_user.trips.page(params[:page]).per(5)
+    @trips = current_user.trips
     @trips_all = current_user.trips
 
     @geojson = Array.new
-
-    @trips_all.each do |trip|
-      @geojson << {
-        type: 'Feature',
-        geometry: {
-          type: 'Point',
-          coordinates: [trip.longitude, trip.latitude]
-        },
-        properties: {
-          name: trip.title,
-          address: trip.trip_location,
-          :'marker-color' => '#00607d',
-          :'marker-symbol' => 'circle',
-          :'marker-size' => 'medium'
-        }
-      }
-    end
+    geobuilder(@trips_all)
    
     respond_to do |format|
       format.html { render :index }
@@ -59,11 +43,25 @@ class TripsController < ApplicationController
 
   private
 
-  def build_geojson(trips, geojson)
+  def geobuilder(trips)
     trips.each do |trip|
-      geojson << GeojsonBuilder.build_trip(trip)
+      @geojson << {
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [trip.longitude, trip.latitude]
+        },
+        properties: {
+          name: trip.title,
+          address: trip.trip_location,
+          :'marker-color' => '#00607d',
+          :'marker-symbol' => 'circle',
+          :'marker-size' => 'medium'
+        }
+      }
     end
   end
+
 
   def trip_params
     params.require(:trip).permit(:title, 

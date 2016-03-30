@@ -1,5 +1,6 @@
 <div id="map" class="col s12">
   <script>
+
     L.mapbox.accessToken = 'pk.eyJ1IjoieWVvbWFubmluamEiLCJhIjoiY2ltYmo2bzBnMDQ1NHR5a2ltOWZmeXI3aCJ9.jVpanoyAmB-eexrQsXpWdA';
     
     var map = L.mapbox.map('map', 'yeomanninja.phb28ak1', {
@@ -12,6 +13,7 @@
       }
   }).setView([28.072, -1.494], 2);
 
+  map.scrollWheelZoom.disable();
 
-    </script>
+  </script>
 </div>
