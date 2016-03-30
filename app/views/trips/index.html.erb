@@ -13,8 +13,9 @@
             <a href="#!" class="collection-item"><%= trip.title %></a>
           <% end %>
           <div class="collection-item">
-            <%=  paginate @trips  %>
+            <%=  paginate @trips, remote: true %>
           </div> <!-- End colection-item -->
+
         </div>
       </div>
     </div> <!--End col s5-->
