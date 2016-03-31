@@ -23,8 +23,8 @@ class User < ActiveRecord::Base
                     unless: :from_omniauth?
                     
 
-  validates :email, format: { with: EMAIL_FORMAT}, on: :update,
-                    uniqueness: true, on: :update
+  validates :email, format: { with: EMAIL_FORMAT}, on: :update
+                    # uniqueness: true, on: :update
 
   validates :first_name,
             :password, presence: true, on: :create
