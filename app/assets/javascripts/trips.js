@@ -19,7 +19,7 @@ function placeMarkersOnMap() {
   current_user_id = $("meta[name='current-user-id']").attr("content");
   $.ajax({
     dataType: 'text',
-    url: "/users/15/trips.json",
+    url: "/users/"+ current_user_id + "/trips.json",
     success: function(data) {
       var geojson;
       geojson = $.parseJSON(data);
