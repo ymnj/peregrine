@@ -11,13 +11,15 @@ function showMap() {
   }).setView([28.072, -1.494], 2);
 
   map_box_obj.scrollWheelZoom.disable();
+  console.log('rendered map');
   placeMarkersOnMap();
 }
 
 function placeMarkersOnMap() {
-    $.ajax({
+  current_user_id = $("meta[name='current-user-id']").attr("content");
+  $.ajax({
     dataType: 'text',
-    url: '/users/13/trips.json',
+    url: "/users/15/trips.json",
     success: function(data) {
       var geojson;
       geojson = $.parseJSON(data);

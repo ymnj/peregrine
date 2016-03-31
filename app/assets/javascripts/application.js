@@ -18,7 +18,6 @@
 
 
 $(document).on('page:change', function(){
-  console.log("ready");
   $('#map').hide();  
   $('#trips-left, #map').fadeIn(700);
   showMap();
