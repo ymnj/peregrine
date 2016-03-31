@@ -16,3 +16,9 @@
 //= require turbolinks
 //= require_tree .
 
+
+$(document).on('page:change', function(){
+  $('#map').hide();  
+  $('#trips-left, #map').fadeIn(700);
+  showMap();
+}); 
