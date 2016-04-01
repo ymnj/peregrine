@@ -26,7 +26,7 @@ class Trip < ActiveRecord::Base
 
 
   def trip_location
-    "#{city}, #{country_name}"
+    "#{city} #{country_name}"
   end
   
 end

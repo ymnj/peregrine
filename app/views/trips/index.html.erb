@@ -10,7 +10,7 @@
       <div class="row collection-row">
         <div class="collection">
           <% @trips.each do |trip| %>
-            <a href="#!" class="collection-item"><%= trip.title %></a>
+            <a href="#!" class="collection-item trip-<%= trip.id %>"><%= trip.title %></a>
           <% end %>
           <!-- <div class="collection-item">
   
