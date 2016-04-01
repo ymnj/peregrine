@@ -53,9 +53,8 @@ class TripsController < ApplicationController
         },
         properties: {
           title: trip.title,
+          id: trip.id,
           description: trip.trip_location,
-          name: trip.title,
-          address: trip.trip_location,
           icon: {
               iconUrl: avatar(user), 
               iconSize: [30, 30], # size of the icon
