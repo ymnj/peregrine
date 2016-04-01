@@ -57,8 +57,8 @@ class TripsController < ApplicationController
           description: trip.trip_location,
           icon: {
               iconUrl: avatar(user), 
-              iconSize: [30, 30], # size of the icon
-              iconAnchor: [15, 15], # point of the icon which will correspond to marker's location
+              iconSize: [40, 40], # size of the icon
+              iconAnchor: [20, 20], # point of the icon which will correspond to marker's location
               popupAnchor: [0, -25], # point from which the popup should open relative to the iconAnchor
               className: "marker-icon"
               }

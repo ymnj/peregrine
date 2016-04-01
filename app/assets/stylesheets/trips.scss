@@ -56,8 +56,17 @@
       @include full-height;
       width: 100%;
       padding: 0;
-      position: relative
+      position: relative;
+
+      .leaflet-popup-content-wrapper {
+        //background-color: lightblue;
+      }
+
+      .leaflet-popup-tip {
+        //border-top: 10px solid lightblue;
+      }
     }
+
   }
 
   .marker-icon {
