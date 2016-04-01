@@ -27,7 +27,7 @@ function placeMarkersOnMap() {
         
         marker.setIcon(L.icon(feature.properties.icon));
 
-        $('.collection a.trip-'+ marker.feature.properties.id).on('click', function(){
+        $('.collection').on('click', 'a.trip-'+ marker.feature.properties.id ,function(){
           map_box_obj.setView(marker.getLatLng(), 10);
              marker.openPopup();
         });  
