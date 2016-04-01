@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
 
 
-  resources :trips, except: [:index]
+  resources :trips, except: [:index] do
+    resources :photos
+  end
 
   resources :users, except: [:index, :new] do 
     resources :trips, only: [:index]
