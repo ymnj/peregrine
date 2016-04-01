@@ -1,5 +1,6 @@
 class Trip < ActiveRecord::Base
   belongs_to :user
+  has_many :photos, dependent: :destroy
 
   #Geocoder
   geocoded_by :trip_location   
@@ -15,7 +16,7 @@ class Trip < ActiveRecord::Base
             :start_date,
             :end_date, presence: true
 
-  validates :body, length: { maximum: 1000 }
+  validates :body, length: { maximum: 140 }
 
 
   def country_name

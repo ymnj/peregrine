@@ -25,9 +25,23 @@ function placeMarkersOnMap() {
         var marker = e.layer,
             feature = marker.feature;
         
+        // This sets the icons with user image
         marker.setIcon(L.icon(feature.properties.icon));
 
-        $('.collection a.trip-'+ marker.feature.properties.id).on('click', function(){
+
+        // Create custom popup content
+        var popupContent =  '<a class="popup" href="' + feature.properties.url + '">' + 
+                            feature.properties.title +
+                            '</a>' +
+                            '<p>hihihi</p>';
+
+        marker.bindPopup(popupContent,{
+            closeButton: false,
+            minWidth: 320
+        });
+
+        // This pans to the marker on the map when a trip is clicked
+        $('.collection').on('click', 'a.trip-'+ marker.feature.properties.id ,function(){
           map_box_obj.setView(marker.getLatLng(), 10);
              marker.openPopup();
         });  
