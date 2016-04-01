@@ -1,7 +1,7 @@
 class TripsController < ApplicationController
 
   def index
-    @trips = current_user.trips
+    @trips = current_user.trips.order(created_at: :desc)
     @trips_all = current_user.trips
 
     @geojson = Array.new
