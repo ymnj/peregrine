@@ -30,7 +30,7 @@ function placeMarkersOnMap() {
 
 
         // Create custom popup content
-        var popupContent =  '<a target="_blank" class="popup" href="' + feature.properties.url + '">' + 
+        var popupContent =  '<a class="popup" href="' + feature.properties.url + '">' + 
                             feature.properties.title +
                             '</a>' +
                             '<p>hihihi</p>';

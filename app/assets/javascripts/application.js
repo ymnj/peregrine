@@ -18,9 +18,12 @@
 
 
 $(document).on('page:change', function(){
-  $('#map').hide();  
-  $('#trips-left, #map').fadeIn(700, function(){
-    map_box_obj.invalidateSize();
-  });
-  showMap();
+ $('#trips-left').fadeIn(700);
 }); 
+
+
+// $('#map').hide();  
+//   $('#trips-left, #map').fadeIn(700, function(){
+//     map_box_obj.invalidateSize();
+//   });
+//   showMap();
