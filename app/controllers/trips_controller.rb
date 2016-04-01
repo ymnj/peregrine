@@ -54,6 +54,7 @@ class TripsController < ApplicationController
         properties: {
           title: trip.title,
           id: trip.id,
+          url: trip_photos_url(trip.id),
           description: trip.trip_location,
           icon: {
               iconUrl: avatar(user), 
