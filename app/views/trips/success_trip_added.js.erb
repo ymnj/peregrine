@@ -1,4 +1,4 @@
-var newTrip = "<a href='#!' class='collection-item'><%= @trip.title %></a>";
+var newTrip = "<a href='javascript:void(0)' class='collection-item trip-" + "<%= @trip.id %>'><%= @trip.title %></a>";
 
 $('#trips-left .collection').prepend(newTrip);
 
