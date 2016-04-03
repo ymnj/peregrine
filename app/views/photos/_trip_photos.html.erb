@@ -1,0 +1,9 @@
+<div id="photo-gallery">
+  <ul class="photo-list">
+    <% @photos.each do |photo| %>
+      <li>
+        <%= image_tag single_photo(photo) %>
+      </li>
+    <% end %>
+  </ul>
+</div>
