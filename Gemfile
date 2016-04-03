@@ -47,6 +47,7 @@ gem 'countries'
 
 gem 'geocoder'
 
+gem 'cocoon'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
