@@ -15,6 +15,12 @@
 
   <%= link_to 'Add new photos', new_trip_photo_path %>
 
+  <div class="footer-copyright">
+    <div class="container">
+    © 2014 Copyright Text
+    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
 
 </div>
 
@@ -24,9 +30,13 @@
   $(document).ready(function(){
     $("#photo-gallery").unitegallery({
       gallery_theme: "grid",
+      theme_panel_position: "left",
+      theme_hide_panel_under_width: 480,
+      gallery_preserve_ratio: true,
       gallery_width: "100%",
       gallery_height: "calc(100vh - 64px)",
       gallery_control_thumbs_mousewheel: false,
+      slider_control_zoom: false
 
     });
   });
