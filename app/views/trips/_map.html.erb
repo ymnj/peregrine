@@ -1,4 +1,12 @@
 <div id="map" class="col s12">
   
-
 </div>
+
+<script>
+
+  showMap();
+  
+  $('#map').hide().fadeIn(800, function(){
+    map_box_obj.invalidateSize();
+  });
+</script>

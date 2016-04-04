@@ -11,15 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160330054947) do
+ActiveRecord::Schema.define(version: 20160403045538) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "geojson_builders", force: :cascade do |t|
+  create_table "photos", force: :cascade do |t|
+    t.text     "caption"
+    t.string   "location"
+    t.integer  "trip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "trip_photo"
   end
+
+  add_index "photos", ["trip_id"], name: "index_photos_on_trip_id", using: :btree
 
   create_table "trips", force: :cascade do |t|
     t.string   "country"
@@ -53,5 +59,6 @@ ActiveRecord::Schema.define(version: 20160330054947) do
 
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", using: :btree
 
+  add_foreign_key "photos", "trips"
   add_foreign_key "trips", "users"
 end

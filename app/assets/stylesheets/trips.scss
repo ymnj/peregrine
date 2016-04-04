@@ -7,6 +7,8 @@
 
 .container.trips-container {
   width: 100%;
+  margin: 0;
+  max-width: none;
   @include full-height;
 
   .row {
@@ -56,8 +58,17 @@
       @include full-height;
       width: 100%;
       padding: 0;
-      position: relative
+      position: relative;
+
+      .leaflet-popup-content-wrapper {
+        //background-color: lightblue;
+      }
+
+      .leaflet-popup-tip {
+        //border-top: 10px solid lightblue;
+      }
     }
+
   }
 
   .marker-icon {

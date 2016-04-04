@@ -1,7 +1,7 @@
 class TripsController < ApplicationController
 
   def index
-    @trips = current_user.trips
+    @trips = current_user.trips.order(created_at: :desc)
     @trips_all = current_user.trips
 
     @geojson = Array.new
@@ -53,13 +53,13 @@ class TripsController < ApplicationController
         },
         properties: {
           title: trip.title,
+          id: trip.id,
+          url: trip_photos_url(trip.id),
           description: trip.trip_location,
-          name: trip.title,
-          address: trip.trip_location,
           icon: {
               iconUrl: avatar(user), 
-              iconSize: [30, 30], # size of the icon
-              iconAnchor: [15, 15], # point of the icon which will correspond to marker's location
+              iconSize: [40, 40], # size of the icon
+              iconAnchor: [20, 20], # point of the icon which will correspond to marker's location
               popupAnchor: [0, -25], # point from which the popup should open relative to the iconAnchor
               className: "marker-icon"
               }

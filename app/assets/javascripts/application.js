@@ -13,12 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/effect-slide
+//= require jquery-fileupload/basic
 //= require turbolinks
 //= require_tree .
 
 
 $(document).on('page:change', function(){
-  $('#map').hide();  
-  $('#trips-left, #map').fadeIn(700);
-  showMap();
+ $('#trips-left').fadeIn(700);
 }); 
