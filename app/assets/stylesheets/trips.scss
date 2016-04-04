@@ -76,3 +76,32 @@
   }
 
 }
+
+.collection-item .zmdi {
+  float: right;
+  margin: 0 15px;
+  font-size: 22px;
+}
+
+.collection {
+  li {
+    padding: 10px 0;
+  
+    a {
+      position: relative;
+      left: 45px;
+    }
+  }
+}
+
+
+@media (max-width: 980px) {
+  .container.trips-container ul.collection a{
+    left: 0px;
+  }
+  
+  .row .collection-item .zmdi {
+    margin: 0 8px;
+  }
+
+}
