@@ -5,7 +5,7 @@ function showMap() {
     //     continuousWorld: true,
     //     noWrap: true
     // }
-  }).setView([28.072, -1.494], 2);
+  }).setView([16.072, -1.494], 2);
 
   //map_box_obj.scrollWheelZoom.disable();
   placeMarkersOnMap();
