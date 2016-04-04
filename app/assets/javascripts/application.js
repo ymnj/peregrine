@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/effect-slide
-//= require cocoon
+//= require jquery-fileupload/basic
 //= require turbolinks
 //= require_tree .
 
