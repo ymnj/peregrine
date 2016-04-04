@@ -44,6 +44,23 @@
       font-size: 22px;
     }
 
+    a.collection-item .zmdi {
+      float: right;
+      margin: 0 15px;
+      font-size: 22px;
+    }
+
+    li {
+      padding: 10px 0;
+    
+      a.edit-trip-btn, a.add-trip-photos-btn {
+        float: right;
+        margin: 0 15px 0 0;
+        font-size: 22px;
+      }
+
+    }
+
   }
 
   #trips-right {
@@ -73,6 +90,11 @@
 
   .marker-icon {
     border-radius: 20px;
+  }
+  
+  .trip-title {
+    position: relative;
+    left: 30px
   }
 
 }
