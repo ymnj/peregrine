@@ -1,0 +1,13 @@
+<div id="photo-gallery">
+  <% @photos.each do |photo| %>
+    <%= image_tag single_photo(photo), data: { :image => photo.trip_photo.url, :description => photo.caption } %>
+  <% end %>
+</div>
+
+<script>
+  $(document).ready(function(){
+    $("#photo-gallery").unitegallery({
+      gallery_theme: "grid"
+    });
+  });
+</script>
