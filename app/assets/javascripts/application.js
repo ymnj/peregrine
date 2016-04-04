@@ -22,4 +22,6 @@
 
 $(document).on('page:change', function(){
  $('#trips-left').fadeIn(700);
+
+ $('.trips-photos-container').hide().fadeIn(1200);
 }); 
