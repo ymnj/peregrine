@@ -44,6 +44,23 @@
       font-size: 22px;
     }
 
+    a.collection-item .zmdi {
+      float: right;
+      margin: 0 15px;
+      font-size: 22px;
+    }
+
+    li {
+      padding: 10px 0;
+    
+      a.edit-trip-btn, a.add-trip-photos-btn {
+        float: right;
+        margin: 0 15px 0 0;
+        font-size: 22px;
+      }
+
+    }
+
   }
 
   #trips-right {
@@ -74,34 +91,10 @@
   .marker-icon {
     border-radius: 20px;
   }
-
-}
-
-.collection-item .zmdi {
-  float: right;
-  margin: 0 15px;
-  font-size: 22px;
-}
-
-.collection {
-  li {
-    padding: 10px 0;
   
-    a {
-      position: relative;
-      left: 45px;
-    }
-  }
-}
-
-
-@media (max-width: 980px) {
-  .container.trips-container ul.collection a{
-    left: 0px;
-  }
-  
-  .row .collection-item .zmdi {
-    margin: 0 8px;
+  .trip-title {
+    position: relative;
+    left: 30px
   }
 
 }
