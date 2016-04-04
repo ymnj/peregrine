@@ -7,6 +7,8 @@
 
 .container.trips-container {
   width: 100%;
+  margin: 0;
+  max-width: none;
   @include full-height;
 
   .row {

@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="input-field col s12">
+    <%= f.label :caption %>
+    <%= f.text_field :caption %>
+  </div>
+</div>
+<div class-"row">
+  <div class="input-field col s12">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="file-field input-field col s12">
+    <div class="btn">
+      <span>File</span>
+      <%= f.file_field :trip_photo, :multiple => true %>
+      <%= f.hidden_field :trip_photo_cache %>
+    </div>
+    <div class="file-path-wrapper">
+      <%= text_field_tag :trip_photo, nil, class: "file-path validate" %>
+    </div>
+  </div>
+  <%= link_to_remove_association "remove photo", f %>
+</div>

@@ -47,7 +47,7 @@ gem 'countries'
 
 gem 'geocoder'
 
-gem 'cocoon'
+gem "jquery-fileupload-rails"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
