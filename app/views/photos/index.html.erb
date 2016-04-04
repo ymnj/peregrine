@@ -1,23 +1,33 @@
 <div class="container trips-photos-container">
   <%#= link_to "Add photo", new_trip_photo_path %>
   
-
-  <div class="col s8" style="background-color: steelblue">
-    <%#= render 'trip_photos' %>
-    <div id="photo-gallery">
-      <ul class="photo-list">
+  <div class="row">
+    <div class="col s12" style="background-color: steelblue">
+      <%#= render 'trip_photos' %>
+      <div id="photo-gallery">
         <% @photos.each do |photo| %>
-          <li>
-            <%= image_tag single_photo(photo) %>
-          </li>
+          <%= image_tag single_photo(photo), alt: photo.location, data: { image: photo.trip_photo.url, description: photo.caption } %>
         <% end %>
-      </ul>
+      </div>
     </div>
   </div>
-
   <%# practice form %>
 
   <%= link_to 'Add new photos', new_trip_photo_path %>
 
 
 </div>
+
+
+
+<script>
+  $(document).ready(function(){
+    $("#photo-gallery").unitegallery({
+      gallery_theme: "grid",
+      gallery_width: "100%",
+      gallery_height: "calc(100vh - 64px)",
+      gallery_control_thumbs_mousewheel: false,
+
+    });
+  });
+</script>
