@@ -1,4 +1,5 @@
-var newTrip = $("<a href='javascript:void(0)' class='collection-item trip-" + "<%= @trip.id %>'><%= @trip.title %></a>");
+
+var newTrip = "<%= j render partial: 'newly_added_trip', locals: { trip: @trip } %>";
 
 $('#trips-left .collection').prepend(newTrip);
 
