@@ -10,7 +10,7 @@
       <div class="row collection-row">
         <ul class="collection">
           <% @trips.each do |trip| %>
-            <%= render partial: "newly_added_trip", locals: { trip: trip } %>
+            <%= render partial: "trips_list", locals: { trip: trip } %>
           <% end %>
         </ul>
       </div>

@@ -53,7 +53,7 @@
     li {
       padding: 10px 0;
     
-      a.edit-trip-btn, a.add-trip-photos-btn {
+      a.edit-trip-btn, a.add-trip-photos-btn, .delete-trip-btn {
         float: right;
         margin: 0 15px 0 0;
         font-size: 22px;
@@ -94,7 +94,7 @@
   
   .trip-title {
     position: relative;
-    left: 30px
+    left: 45px
   }
 
 }

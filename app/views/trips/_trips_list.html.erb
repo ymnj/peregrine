@@ -1,0 +1,8 @@
+<li class="collection-item">
+<a href="javascript:void(0)" class="trip-<%= trip.id %> trip-title"><%= trip.title %></a>
+<%= link_to '<i class="zmdi zmdi-delete"></i>'.html_safe, trip_path(trip), remote: true, class: 'delete-trip-btn', method: :delete, data: {confirm: "Are you sure?"} %>
+<%= link_to '<i class="zmdi zmdi-collection-image"></i>'.html_safe, new_trip_photo_path(trip), class: 'add-trip-photos-btn' %>
+<%= link_to '<i class="zmdi zmdi-edit"></i>'.html_safe, edit_trip_path(trip), remote: true, class: 'edit-trip-btn' %>
+</li>
+
+
