@@ -1,6 +1,6 @@
 
 var newTrip = "<%= j render partial: 'trips_list', locals: { trip: @trip } %>";
 
-$('#trips-left .collection').prepend(newTrip);
+$('#trips-left .collection').prepend(newTrip).hide().slideDown(700);
 
 $('#trips-right').html("<%= j render 'map' %>");
