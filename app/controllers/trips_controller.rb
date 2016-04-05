@@ -1,5 +1,7 @@
 class TripsController < ApplicationController
 
+  before_action :find_trip, only: [:edit, :update, :destroy]
+
   def index
     @trips = current_user.trips.order(created_at: :desc)
     @trips_all = current_user.trips
@@ -40,6 +42,23 @@ class TripsController < ApplicationController
     end
   end
 
+  def edit
+
+    respond_to do |format|
+      format.js { render "success_edit" }
+    end
+  end
+
+  def update
+
+    respond_to do |format|
+      if @trip.update trip_params
+        format.js { render "success_trip_edited" }
+      end
+    end 
+
+  end
+
 
   private
 
@@ -76,6 +95,10 @@ class TripsController < ApplicationController
                                  :start_date, 
                                  :end_date, 
                                  :body)   
+  end
+
+  def find_trip
+    @trip = Trip.find(params[:id])
   end
 
 end

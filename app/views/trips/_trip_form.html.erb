@@ -1,0 +1,39 @@
+<%= form_for @trip, remote: true do |f| %>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :title, "Title *" %>
+      <%= f.text_field :title, length: 50, class: "validate" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12 m6">
+      <%= f.country_select :country, { include_blank: true } %>
+      <%= f.label :country, "Country *" %>
+    </div>
+    <div class="input-field col s12 m6">
+      <%= f.label :city %>
+      <%= f.text_field :city %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12 m6">
+      <%= f.label :start_date, class: "active" %>
+      <%= f.date_field :start_date, class: "datepicker" %>
+    </div>
+    <div class="input-field col s12 m6">
+      <%= f.label :end_date, class: "active" %>
+      <%= f.date_field :end_date, class: "datepicker" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <%= f.label :body, "Trip Description" %>
+      <%= f.text_area :body, class: "materialize-textarea", length: 140 %>
+    </div>
+  </div>
+  <div class="col s12 center-align">
+    <%= button_tag( class: "btn waves-effect waves-light" ) do %>
+    Save Trip <i class='material-icons right'>send</i>
+<% end %>
+  </div>
+<% end %>
