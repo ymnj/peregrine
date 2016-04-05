@@ -1,2 +1,8 @@
 
 $('#trips-right').html("<%= j render 'map' %>");
+
+
+// Grag the current trip.id 
+// Use the trip.id to find the edited trip in the list and update it's title.
+$tripId = <%= @trip.id %>
+$('.collection .collection-item a.trip-' + $tripId ).fadeOut(400).html("<%= @trip.title %>").fadeIn(400);
