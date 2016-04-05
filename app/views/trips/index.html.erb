@@ -10,11 +10,7 @@
       <div class="row collection-row">
         <ul class="collection">
           <% @trips.each do |trip| %>
-            <li class="collection-item">
-              <a href="javascript:void(0)" class="trip-<%= trip.id %> trip-title"><%= trip.title %></a>
-              <%= link_to '<i class="zmdi zmdi-collection-image"></i>'.html_safe, new_trip_photo_path(trip.id), class: 'add-trip-photos-btn' %>
-              <%= link_to '<i class="zmdi zmdi-edit"></i>'.html_safe, edit_trip_path(trip.id), class: 'edit-trip-btn' %>
-            </li>
+            <%= render partial: "newly_added_trip", locals: { trip: trip } %>
           <% end %>
         </ul>
       </div>

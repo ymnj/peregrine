@@ -3,7 +3,6 @@
   
   <div class="row">
     <div class="col s12">
-      <%#= render 'trip_photos' %>
       <div id="photo-gallery">
         <% @photos.each do |photo| %>
           <%= image_tag single_photo(photo), alt: photo.location, data: { image: photo.trip_photo.url, description: photo.caption } %>
@@ -11,8 +10,6 @@
       </div>
     </div>
   </div>
-
-  <%= link_to 'Add new photos', new_trip_photo_path %>
 
 </div>
 
