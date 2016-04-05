@@ -50,14 +50,24 @@ class TripsController < ApplicationController
   end
 
   def update
-
     respond_to do |format|
       if @trip.update trip_params
         format.js { render "success_trip_edited" }
+      else
+        format.js { render "fail_trip_edited" }
       end
     end 
-
   end
+
+  def destroy
+    @trip.destroy
+
+    respond_to do |format|
+      format.js { render "success_trip_deleted" }
+    end
+  end
+
+
 
 
   private

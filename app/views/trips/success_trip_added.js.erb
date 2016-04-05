@@ -1,5 +1,5 @@
 
-var newTrip = "<%= j render partial: 'newly_added_trip', locals: { trip: @trip } %>";
+var newTrip = "<%= j render partial: 'trips_list', locals: { trip: @trip } %>";
 
 $('#trips-left .collection').prepend(newTrip);
 

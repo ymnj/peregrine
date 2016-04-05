@@ -1,0 +1,5 @@
+
+// Grag the current trip.id 
+// Use the trip.id to find the edited trip in the list and remote it from the list
+$tripId = <%= @trip.id %>
+$('.collection .collection-item a.trip-' + $tripId ).parent().fadeOut(1000);
