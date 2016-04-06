@@ -47,6 +47,8 @@ gem 'countries'
 
 gem 'geocoder'
 
+gem 'dropzonejs-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

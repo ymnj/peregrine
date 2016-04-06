@@ -8,15 +8,21 @@ class PhotosController < ApplicationController
   def new
     current_trip
     @photo = Photo.new
+
+    respond_to do |format|
+      format.js { render js: 'alert("dsds")'}
+    end
   end
 
   def create
     @photos = current_trip.photos.all
-    @photo = Photo.create photo_params
+    @photo = Photo.new photo_params
     @photo.trip_id = current_trip.id
 
     if @photo.save
-      redirect_to trip_photos_path
+      respond_to do |format|
+        format.json{ render :json => @photo }
+      end
     else
       render :new
     end
@@ -34,3 +40,4 @@ class PhotosController < ApplicationController
     params.require(:photo).permit(:caption, :location, :trip_photo, :trip_photo_cache)
   end
 end
+

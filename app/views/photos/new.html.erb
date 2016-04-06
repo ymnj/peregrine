@@ -1,39 +1,31 @@
 <div class="add-photo-container">
 
   <div class="row">
-  <%= form_for [@trip, @photo], html: {id: 'photo-form', class: 'col s12 m6 offset-m3'} do |f| %>
-    <div class="row">
-      <div class="input-field col s12">
-        <%= f.label :caption %>
-        <%= f.text_field :caption %>
-      </div>
-    </div>
-    <div class-"row">
-      <div class="input-field col s12">
-        <%= f.label :location %>
-        <%= f.text_field :location %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="file-field input-field col s12">
-        <div class="btn">
-          <span>File</span>
-          <%= f.file_field :trip_photo %>
-          <%= f.hidden_field :trip_photo_cache %>
-        </div>
-        <div class="file-path-wrapper">
-          <%= text_field_tag :trip_photo, nil, class: "file-path validate" %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s12">
-        <%= button_tag( :class => "btn waves-effect waves-light" ) do %>
-          Upload <i class='material-icons right'>send</i>
-        <% end %>
-      </div>
+  <%= form_for [@trip, @photo], html: {id: 'trip-dropzone', class: 'col s12 m6 offset-m3 dropzone'} do |f| %>
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+    <div class="fallback">
+      <%= f.file_field :trip_photo, multiple: true%>
     </div>
   <% end %>
   </div>
 
 </div>
+
+
+<script>
+$(document).ready(function(){
+  // disable auto discover
+  Dropzone.autoDiscover = false;
+ 
+
+  var dropzone = new Dropzone (".dropzone", {
+    paramName: "photo[trip_photo]", // Rails expects the file upload to be something like model[field_name]
+    addRemoveLinks: false // Don't show remove links on dropzone itself.
+  }); 
+
+  dropzone.on("success", function(file) {
+    this.removeFile(file)
+    $.getScript("<%= new_trip_photo_url(@trip, @photo) %>")
+  })
+});
+</script>
