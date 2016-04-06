@@ -10,6 +10,7 @@ class PhotosController < ApplicationController
     @photo = Photo.new
 
     respond_to do |format|
+      format.html { render :new }
       format.js { render js: 'alert("dsds")'}
     end
   end
