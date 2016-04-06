@@ -15,7 +15,6 @@
 //= require jquery-ui/effect-slide
 //= require unitegallery
 //= require ug-theme-grid
-//= require jquery-fileupload/basic
 //= require turbolinks
 //= require_tree .
 
