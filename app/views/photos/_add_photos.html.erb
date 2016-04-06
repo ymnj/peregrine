@@ -1,0 +1,56 @@
+<div class="row center-align">
+    <%= link_to '<i class="zmdi zmdi-long-arrow-return"></i>'.html_safe, user_trips_path(current_user), class: "return-trip-index-btn" %>
+    <span>
+      <%= button_tag "Upload",id: "upload-btn", class: "btn waves-effect waves-light" %>
+      <%= button_tag "Clear",id: "clear-btn", class: "btn waves-effect waves-light" %>
+    </span>
+  </div>
+
+  <div class="row center-align">
+    <div class="col s12 dropzone-container">
+      <%= form_for [@trip, @photo], html: {id: 'trip-dropzone', class: 'dropzone'} do |f| %>
+        <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+        <div class="dz-message needsclick">
+          <h3>Drop files here</h3> or
+          <strong>click</strong> to upload
+        </div>
+        <div class="fallback">
+          <%= f.file_field :trip_photo, multiple: true%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <script>
+  $(document).ready(function(){
+    // disable auto discover
+    Dropzone.autoDiscover = false;
+   
+    var dropzone = new Dropzone (".dropzone", {
+      paramName: "photo[trip_photo]", // Rails expects the file upload to be something like model[field_name]
+      addRemoveLinks: true, // Don't show remove links on dropzone itself.
+      autoProcessQueue:false,
+
+      init: function(){
+        this.on("processing", function() {
+          dropzone.options.autoProcessQueue = true;
+        });
+
+        this.on("queuecomplete", function(file) {
+          // this.removeFile(file)
+          $.getScript("<%= new_trip_photo_url %>")
+        })
+      }
+    });
+
+    $('#upload-btn').on('click',function(e){
+      e.preventDefault();
+      dropzone.processQueue();  
+    }); 
+
+    $('#clear-btn').on('click', function(){
+      dropzone.removeAllFiles(true); 
+    })
+
+  });
+  </script>

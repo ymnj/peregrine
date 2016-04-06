@@ -11,7 +11,8 @@ class PhotosController < ApplicationController
 
     respond_to do |format|
       format.html { render :new }
-      format.js { render js: 'alert("dsds")'}
+      format.js { render :js => "window.location.href='"+trip_photos_url(current_trip())+"'" }
+      # format.js { render "success_photo_added" }
     end
   end
 
@@ -27,9 +28,11 @@ class PhotosController < ApplicationController
     else
       render :new
     end
-
   end
 
+  def edit
+
+  end
 
   private
 
