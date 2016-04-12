@@ -1,5 +1,34 @@
+
+
 .container.trips-photos-container {
-  width: 100%;
-  margin: 0;
-  max-width: none;
+width: 100%;
+margin: 0;
+max-width: none;
+background-color: black;
+
 }
+
+.container.new-photos-container {
+  margin-top: 50px;
+
+  #upload-btn {
+    margin: 20px;
+    position: relative;
+    left: -15px;
+  }
+
+  span {
+    float: right;
+    position:relative;
+    left: -13px;
+  }
+
+  a.return-trip-index-btn {
+      float: left;
+      position: relative;
+      left: 15px;
+      top: 15px;
+      font-size: 40px;
+    }
+}
+

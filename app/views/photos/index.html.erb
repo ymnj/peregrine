@@ -2,23 +2,12 @@
   <%#= link_to "Add photo", new_trip_photo_path %>
   
   <div class="row">
-    <div class="col s12" style="background-color: steelblue">
-      <%#= render 'trip_photos' %>
+    <div class="col s12">
       <div id="photo-gallery">
         <% @photos.each do |photo| %>
           <%= image_tag single_photo(photo), alt: photo.location, data: { image: photo.trip_photo.url, description: photo.caption } %>
         <% end %>
       </div>
-    </div>
-  </div>
-  <%# practice form %>
-
-  <%= link_to 'Add new photos', new_trip_photo_path %>
-
-  <div class="footer-copyright">
-    <div class="container">
-    © 2014 Copyright Text
-    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
     </div>
   </div>
 

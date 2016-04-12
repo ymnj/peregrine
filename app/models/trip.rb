@@ -25,9 +25,8 @@ class Trip < ActiveRecord::Base
   end
 
 
-
   def trip_location
-    "#{city} #{country_name}"
+    city.nil? ? "#{country_name}" : "#{city} #{country_name}"
   end
   
 end

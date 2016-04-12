@@ -1,5 +1,6 @@
-var newTrip = $("<a href='javascript:void(0)' class='collection-item trip-" + "<%= @trip.id %>'><%= @trip.title %></a>");
 
-$('#trips-left .collection').prepend(newTrip);
+var newTrip = "<%= j render partial: 'trips_list', locals: { trip: @trip } %>";
+
+$('#trips-left .collection').prepend(newTrip).hide().slideDown(700);
 
 $('#trips-right').html("<%= j render 'map' %>");
