@@ -3,9 +3,8 @@ Rails.application.configure do
 
   config.secret_key_base = ENV['SECRET_KEY_BASE']
 
-  
-  config.serve_static_assets = true
-  config.action_dispatch.x_sendfile_header = ‘X-Accel-Redirect’
+
+  config.serve_static_files = true
   config.assets.compile = true
 
 
