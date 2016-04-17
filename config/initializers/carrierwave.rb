@@ -1,5 +1,4 @@
 CarrierWave.configure do |config|
-  config.fog_provider = 'fog'
   config.fog_credentials = {
     provider:              'AWS',                        # required
     aws_access_key_id:     Rails.application.secrets.AWS_ACCESS_KEY_ID || ENV["AWS_ACCESS_KEY_ID"],                        # required
@@ -7,4 +6,5 @@ CarrierWave.configure do |config|
     region:                'US Standard'                 # optional, defaults to 'us-east-1'
   }
   config.fog_directory  = "peregrine-app"                          # required
+  config.fog_public     = false
 end
