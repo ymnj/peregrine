@@ -18,6 +18,13 @@
     margin-left: 6px;
   }
 
+  .brand-logo img {
+    width: 68px;
+    height: 55px;
+    margin: 0;
+    padding: 0;
+  }
+
 }
 
 .parallax-container {
@@ -58,6 +65,14 @@
     width: 100%;
   }
 
+@media only screen and (min-width : 600px) {
+
+   .brand-logo {
+      position: relative;
+      top: 5px;
+    }
+}  
+
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;
@@ -72,6 +87,7 @@
   #index-banner .section {
     top: 0;
   }
+
 }
 
 .icon-block {
