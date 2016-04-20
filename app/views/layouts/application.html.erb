@@ -44,6 +44,11 @@
         <!-- Dropdown Trigger -->
         <% if user_signed_in? %>
           <li>
+            <a href="#">
+              <i class="fa fa-camera-retro" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
             <a class="dropdown-button" data-beloworigin="true" data-hover="true" href="#!" data-activates="dropdown1">
               <i class='material-icons left'>view_module</i><%= user_full_name %> <i class="material-icons right">arrow_drop_down</i>
             </a>
@@ -54,7 +59,7 @@
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <% if user_signed_in? %>
-          <%= render "layouts/user_menu" %>
+          <%= render "layouts/side_user_menu" %>
         <% else %>
           <%= render "layouts/signup_menu" %>
         <% end %>
