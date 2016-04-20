@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   end
   get '/signup' => 'users#new'
 
+  resources :searches, only: [:index]
+
 
   resources :sessions, only: [:create]
   get '/login' => 'sessions#new'

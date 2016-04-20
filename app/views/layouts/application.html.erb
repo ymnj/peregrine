@@ -44,9 +44,7 @@
         <!-- Dropdown Trigger -->
         <% if user_signed_in? %>
           <li>
-            <a href="#">
-              <i class="fa fa-camera-retro" aria-hidden="true"></i>
-            </a>
+            <%= link_to "<i class='fa fa-camera-retro'></i>".html_safe, searches_path %>
           </li>
           <li>
             <a class="dropdown-button" data-beloworigin="true" data-hover="true" href="#!" data-activates="dropdown1">
