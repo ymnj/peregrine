@@ -1,1 +1,35 @@
-<h1>Page of all photos</h1>
+<div class="container">
+  
+  <h1>Page of all photos</h1>
+  
+  <div class="row">
+    <div class="col s12">
+      <div id="main-gallery">
+        <% @photos.each do |photo| %>
+          <%= image_tag single_photo(photo), alt: "test", data: { image: photo.trip_photo.url, description: "photo.caption" } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+<script type="text/javascript">
+
+
+  $(document).ready(function(){
+    $("#main-gallery").unitegallery({
+      lightbox_type: "compact",
+      lightbox_arrows_position: "inside",
+      gallery_theme: "tilesgrid",
+      gallery_width: "100%",
+      grid_num_rows: 4,
+      tile_enable_icons:false
+    });
+  });  
+
+
+</script>
