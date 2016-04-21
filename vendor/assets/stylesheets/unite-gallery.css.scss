@@ -95,7 +95,7 @@
 	height:35px;
 	width:32px;
 	height:32px;
-	background-image:url('../images/loader_skype_trans.gif');
+	background-image:image-url('loader_skype_trans.gif');
 	background-repeat:no-repeat;
 }
 
@@ -175,7 +175,7 @@
 }
 
 .ug-slider-preloader.ug-loader3.ug-loader-black{
-	background-image:url('../images/loader-black3.gif');	
+	background-image:image-url('loader-black3.gif');	
 }
 
 .ug-slider-preloader.ug-loader4{
@@ -699,7 +699,7 @@ img.ug-sepia-effect{
 }
 
 .ug-thumb-wrapper.ug-tile .ug-tile-icon.ug-icon-zoom{
-	background-image:url('../images/icon-zoom32.png');	
+	background-image:image-url('icon-zoom32.png');	
 }
 
 .ug-thumb-wrapper.ug-tile .ug-tile-icon.ug-icon-play{
@@ -805,14 +805,14 @@ img.ug-sepia-effect{
 	width:50px;
 	height:55px;
 	background-repeat:no-repeat;
-	background-image:url('../images/lightbox-arrow-left.png');
+	background-image:image-url('lightbox-arrow-left.png');
 	background-position:0px 0px;
 	z-index:3;
 	cursor:pointer;
 }
 
 .ug-lightbox .ug-lightbox-arrow-right{
-	background-image:url('../images/lightbox-arrow-right.png');
+	background-image:image-url('lightbox-arrow-right.png');
 }
 
 .ug-lightbox .ug-lightbox-button-close{
@@ -820,7 +820,7 @@ img.ug-sepia-effect{
 	width:36px;
 	height:36px;
 	background-repeat:no-repeat;
-	background-image:url('../images/lightbox-icon-close.png');
+	background-image:image-url('lightbox-icon-close.png');
 	background-position:0px 0px;
 	z-index:4;
 	cursor:pointer;
@@ -830,7 +830,7 @@ img.ug-sepia-effect{
 .ug-lightbox-compact .ug-lightbox-button-close{
 	width:45px;
 	height:41px;
-	background-image:url('../images/lightbox-icon-close-compact2.png');
+	background-image: image-url('lightbox-icon-close-compact2.png');
 }
 
 
@@ -957,7 +957,7 @@ img.ug-sepia-effect{
 }
 
 .ug-bullets.ug-skin-default.ug-bullets-gray .ug-bullet{ 
-	background-image:url('../skins/default/tile_bullets_gray.png');
+	background-image:image-url('tile_bullets_gray.png');
 }
 
 .ug-bullets.ug-skin-default.ug-bullets-blue .ug-bullet{ 
