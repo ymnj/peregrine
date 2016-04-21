@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <!--Import Google Icon Font-->
-  <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <!--Import materialize.css-->
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css"> -->
   
@@ -38,11 +38,14 @@
 
   <nav>
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo center  ">-Logo-</a>
+      <a href="/" class="brand-logo center"> <%= image_tag 'logo.png' %> </a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <!-- Dropdown Trigger -->
         <% if user_signed_in? %>
+          <li>
+            <%= link_to "<i class='fa fa-camera-retro'></i>".html_safe, searches_path %>
+          </li>
           <li>
             <a class="dropdown-button" data-beloworigin="true" data-hover="true" href="#!" data-activates="dropdown1">
               <i class='material-icons left'>view_module</i><%= user_full_name %> <i class="material-icons right">arrow_drop_down</i>
@@ -54,7 +57,7 @@
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <% if user_signed_in? %>
-          <%= render "layouts/user_menu" %>
+          <%= render "layouts/side_user_menu" %>
         <% else %>
           <%= render "layouts/signup_menu" %>
         <% end %>

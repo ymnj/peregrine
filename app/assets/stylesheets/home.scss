@@ -6,6 +6,22 @@
 
 .nav-wrapper {
 
+  .hide-on-med-and-down {
+
+    a {
+      height: 64px;
+    }
+
+    .fa-camera-retro:before {
+      font-size: 1.3em;
+    }
+  }
+
+  .side-nav i.fa {
+    font-size: 1.2em;
+    margin-right: 11px;
+  }
+
   .zmdi {
     display: inline-block;
     text-align: left;
@@ -16,6 +32,13 @@
 
   #dropdown1 i {
     margin-left: 6px;
+  }
+
+  .brand-logo img {
+    width: 68px;
+    height: 55px;
+    margin: 0;
+    padding: 0;
   }
 
 }
@@ -37,14 +60,14 @@
 
   h5 {
     width: 100%;
-    color: black;
-    font-size: 2.2em;
-    -webkit-text-stroke: 0.2px black;
+    font-size: 2.5em;
+    font-weight: 200;
+    letter-spacing: 1px;
   }
 
   h5.header.col.s12.light.middle-hd {
     background-color: black;
-    opacity: 0.8;
+    opacity: 0.7;
     color: white;
   }
 
@@ -57,6 +80,14 @@
   .parallax-container .section {
     width: 100%;
   }
+
+@media only screen and (min-width : 600px) {
+
+   .brand-logo {
+      position: relative;
+      top: 5px;
+    }
+}  
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
@@ -72,6 +103,7 @@
   #index-banner .section {
     top: 0;
   }
+
 }
 
 .icon-block {
@@ -81,6 +113,6 @@
   font-size: inherit;
 }
 
-footer.page-footer.teal{
+#home-wrapper footer.page-footer {
   margin: 0;
 } 

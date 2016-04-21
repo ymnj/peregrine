@@ -49,7 +49,11 @@ gem 'geocoder'
 
 gem 'dropzonejs-rails'
 
-gem 'rails_12factor'
+gem "fog"
+
+gem 'rails_12factor', group: :production
+
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
