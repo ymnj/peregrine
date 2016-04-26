@@ -53,6 +53,10 @@
     display: block;
     transform: translate3d(-50%, 100px, 0px);
   }
+
+  .section {
+    width: 100%;
+  }
   
   h1 {
     color: white;
@@ -77,9 +81,24 @@
 
 }
 
-  .parallax-container .section {
-    width: 100%;
-  }
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+#home-wrapper footer.page-footer {
+  margin: 0;
+} 
+
+
+.recent-photos img {
+  width: 100%;
+}
+
+/************** Media Queries *************/
 
 @media only screen and (min-width : 600px) {
 
@@ -104,15 +123,8 @@
     top: 0;
   }
 
-}
+  .recent-photos img {
+    margin: 5% 0%;
+  }
 
-.icon-block {
-  padding: 0 15px;
 }
-.icon-block .material-icons {
-  font-size: inherit;
-}
-
-#home-wrapper footer.page-footer {
-  margin: 0;
-} 
