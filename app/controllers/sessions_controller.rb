@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
     else
       flash[:alert] = "wrong wrong something wrong"
       render :new
-      byebug
     end
   end
 
