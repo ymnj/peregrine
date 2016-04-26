@@ -2,7 +2,7 @@
   <% @recent_photos.each do |photo| %>
       <li>
         <div class="col s12 m3 recent-photos">
-          <%= image_tag photo.trip_photo.url, class: "materialboxed z-depth-2" %>
+          <%= image_tag photo.trip_photo.thumb.url, class: "materialboxed z-depth-2" %>
         </div>
       </li>
   <% end %>

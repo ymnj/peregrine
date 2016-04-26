@@ -1,12 +1,24 @@
 <div class="container">
   
-  <h1>Page of all photos</h1>
+  <div class="row search-bar">
+    <div class="col m4 offset-m4 s8 offset-s2">
+       <div class="input-field">
+        <input id="search" type="search" required>
+        <label for="search"><i class="material-icons">search</i></label>
+        <i class="material-icons">close</i>
+      </div>
+    </div>
+  </div>
+   
   
+ 
+ 
+
   <div class="row">
     <div class="col s12">
       <div id="main-gallery">
         <% @photos.each do |photo| %>
-          <%= image_tag single_photo(photo), alt: "test", data: { image: photo.trip_photo.url, description: "photo.caption" } %>
+          <%= image_tag single_photo(photo), alt: "caption", data: { image: photo.trip_photo.url, description: "photo.caption" } %>
         <% end %>
       </div>
     </div>
