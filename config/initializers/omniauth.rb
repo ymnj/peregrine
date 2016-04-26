@@ -8,6 +8,5 @@ Rails.application.config.middleware.use OmniAuth::Builder do
                       secure_image_url: true
 
   provider :google_oauth2, Rails.application.secrets.google_api_key || ENV["google_api_key"],
-                           Rails.application.secrets.google_api_secret || ENV["google_api_secret"]      
-
+                           Rails.application.secrets.google_api_secret || ENV["google_api_secret"]
 end
