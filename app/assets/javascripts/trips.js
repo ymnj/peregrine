@@ -33,7 +33,7 @@ function placeMarkersOnMap() {
         var popupContent =  '<a class="popup" href="' + feature.properties.url + '">' + 
                             feature.properties.title +
                             '</a>' +
-                            '<p>hihihi</p>';
+                            '<p>View Photos</p>';
 
         marker.bindPopup(popupContent,{
             closeButton: false,
