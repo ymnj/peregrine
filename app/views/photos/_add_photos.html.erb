@@ -30,6 +30,7 @@
       paramName: "photo[trip_photo]", // Rails expects the file upload to be something like model[field_name]
       addRemoveLinks: true, // Don't show remove links on dropzone itself.
       autoProcessQueue:false,
+      maxFilesize: 2,
 
       init: function(){
         this.on("processing", function() {
